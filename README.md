@@ -1,89 +1,70 @@
 # 3D Illumination & Surface Rendering Visualization
 
-## Project Overview
+## Overview
 
-This project aims to simplify the understanding of illumination and surface rendering methods using **Three.js**. The web application provides an interactive 3D environment where users can explore different rendering techniques on various 3D shapes.
+An interactive 3D visualization built with React + Three.js that lets you explore basic illumination / reflection components on a set of shapes.
 
-## Live Demo
+## Features
 
-The project is live at: [Illumination & Surface Rendering](https://illumination-surface-rendering.vercel.app/)
+### Shape Selection
 
-# Features
+- Choose from multiple built-in shapes (Cube, Sphere, Cone, Torus, Cylinder, Tetrahedron, Octahedron, Spiral).
+- Navigate from the shape grid (`/`) to a dedicated viewer page (`/view/:shapeId`).
 
-## 1. 3D Model Viewer
-- Displays 3D shapes, including basic shapes (e.g., cubes).
+### Rendering Controls
 
-## 2. Rendering Options
-- Toggle wireframe mode to show or hide the wireframe of the shape.
-- Toggle lighting modes:
-  - Ambient Lighting
-  - Diffuse Lighting
-  - Specular Lighting
-- Change the shape color to any hex color code.
+- Wireframe toggle.
+- Z-buffer (Hidden Surface Removal) toggle (enables/disables depth testing & depth writing on the material).
+- Rotation toggle (auto-rotation on/off).
+- Shape color picker / hex input.
 
-## 3. Custom Model Support
-- Users can upload their own 3D models via session storage.
-- Custom models can be loaded from a URL stored in session storage.
+### Lighting + Scene
 
-## 4. Background and Texture Options
-- Choose between different background options (e.g., "space").
+- Toggle lighting components:
+  - Ambient illumination
+  - Diffuse (directional) light
+  - Specular (point) light
+- Optional “Visible Light Sources” helper markers.
+- Background selection (White / Gray / Black / Space). The Space background renders a star field.
+- Orbit controls: rotate / pan / zoom.
 
-## 5. Lighting Control
-- Toggle ambient, diffuse, and specular lighting.
+## Tech Stack
 
-## 6. Model Rotation Controls
-- Pause rotation to freeze the model in place.
-- The model automatically rotates unless paused.
+- React + TypeScript
+- Vite
+- Three.js via `@react-three/fiber` and `@react-three/drei`
+- Tailwind CSS + shadcn/ui components
 
-## 7. Interactive UI
-- **Control Panel:** Open/close the rendering controls to adjust options like wireframe mode, lighting, textures, and rotation.
-- **Go Back Button:** Navigate back to the home screen or the previous page.
+## Run Locally
 
-## 8. Toast Notifications
-- The app provides user feedback through toast notifications, including errors (e.g., loading errors or missing custom models) and successful actions.
-
-## Technologies Used
-
-- **Three.js** - For rendering 3D graphics
-- **React** - For building a responsive and interactive UI
-- **TypeScript** - For type safety and maintainability
-- **shadcn-ui** - For UI components
-- **Tailwind CSS** - For styling and responsiveness
-
-## How to Run Locally
-
-Ensure you have **Node.js** and **npm** installed. Follow these steps:
+Prereqs: Node.js (recommended 18+).
 
 ```sh
-# Clone the repository
-git clone <YOUR_GIT_URL>
-
-# Navigate to the project directory
-cd <YOUR_PROJECT_NAME>
-
-# Install dependencies
+# install
 npm install
 
-# Start the development server
+# start dev server
 npm run dev
+
+# production build
+npm run build
+
+# preview production build
+npm run preview
 ```
 
-This will launch the project on a local development server with hot reloading.
+If you prefer Bun:
 
+```sh
+bun install
+bun run dev
+```
 
-## Contribution
+## Contributing
 
-If you'd like to contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Make your changes and commit (`git commit -m 'Add new feature'`).
-4. Push to your branch (`git push origin feature-name`).
-5. Open a Pull Request.
-
-## License
-
-This project is open-source and available under the **MIT License**.
-
----
+1. Fork the repository
+2. Create a branch (`git checkout -b feature-name`)
+3. Commit your changes (`git commit -m "..."`)
+4. Push (`git push origin feature-name`)
+5. Open a Pull Request
 
